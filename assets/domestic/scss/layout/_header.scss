@@ -1,0 +1,87 @@
+.header {
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-first-gradient, .8),
+        rgba($color-second-gradient, .8)), 
+        url(../../domestic/img/background-image.jpg);
+    background-position: top center;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100% );
+
+    @include respond(phone) {
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100% );
+    }
+    
+
+        &__text-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;    
+            transform: translate(-50%, -50%);
+            backface-visibility: hidden; 
+            text-align: center;
+    }
+}
+
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    text-shadow: .2rem .2rem rgba($color-black, 0.2);
+    margin-bottom: 4.5rem;
+
+    
+
+    &--main {
+            font-size: 4.5rem;
+            display: block;
+            font-weight: 500;
+            letter-spacing: .5rem;
+            animation: moveInLeft ease-in-out 1s;
+
+            @include respond(phone) {
+                letter-spacing: .5rem;
+                font-size: 4rem;
+            }
+    }
+
+    &--sub {
+        display: block;
+        font-size: 2.7rem;
+        letter-spacing: 1.4rem;
+        font-weight: 500;
+        padding-bottom: 2rem;
+        animation: moveInRight ease-in-out 1s;
+
+        @include respond(phone) {
+            letter-spacing: 1rem;
+            font-size: 2.3rem;
+        }
+    }
+}
+
+.heading-secondary {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    background-image: linear-gradient(to right, $color-first-gradient, $color-second-gradient);
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: 2px;
+    transition: all .2s;
+
+    @include respond(tab-port) {
+        font-size: 3rem;
+    }
+
+    @include respond(phone) {
+        font-size: 2.5rem;
+    }
+
+
+    &:hover {
+        transform: skewY(2deg) skewX(15deg) scale(1.1);
+        text-shadow: .5rem 1rem 2rem rgba($color-black, 0.2);
+    }
+}
